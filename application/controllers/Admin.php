@@ -18,13 +18,17 @@ class Admin extends CI_Controller
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function index()
+    public function loginForm()
     {
-        $this->load->view('welcome_message');
+        $this->load->helper('url');
+        $this->load->view('backend/index');
     }
 
-    public function store()
+    public function login()
     {
-        
+        $this->load->model('AdminModel');
+        $nomUtilisateur = $_POST['nomUtilisateur'];
+        $motDepasse = $_POST['motDePasse'];
+        $this->AdminModel->login($nomUtilisateur, $motDepasse);
     }
 }
