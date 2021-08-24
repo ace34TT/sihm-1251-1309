@@ -8,8 +8,11 @@
     <title>Document</title>
 </head>
 
-<body>
 
+<body>
+    <a href="<?= site_url("admin/categorie") ?>">Categorie</a>
+
+    <?= $content ?>
 </body>
 
 </html>

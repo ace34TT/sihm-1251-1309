@@ -54,5 +54,13 @@ $route['default_controller'] = 'welcome';
 //admin
 $route['admin/login']['get'] = 'admin/loginForm';
 $route['admin/login']['post'] = 'admin/login';
+$route['admin/dashboard']['get'] = 'admin/dashboard';
+
+//categorie
+$route['admin/categorie/form']['get'] = 'categorie/form';
+$route['admin/categorie/form']['post'] = 'categorie/form';
+
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
