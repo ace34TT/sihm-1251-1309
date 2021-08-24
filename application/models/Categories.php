@@ -13,14 +13,4 @@ class Categories extends CI_Model
         }
         return $query->result_array();
     }
-    public  function getCategories6()
-    {
-        $row = array();
-        $query = $this->db->query('select * from Categories ');
-        foreach ($query->result_array() as $row) {
-            $row['id'];
-            $row['nom'];
-        }
-        return $query->result_array();
-    }
 }
