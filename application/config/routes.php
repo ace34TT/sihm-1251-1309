@@ -49,6 +49,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
 $route['default_controller'] = 'welcome';
 
 //admin
@@ -58,8 +59,7 @@ $route['admin/dashboard']['get'] = 'admin/dashboard';
 
 //categorie
 $route['admin/categorie/form']['get'] = 'categorie/form';
-$route['admin/categorie/form']['post'] = 'categorie/form';
-
+$route['admin/categorie/form']['post'] = 'categorie/insert';
 
 
 $route['404_override'] = '';

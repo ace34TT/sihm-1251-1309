@@ -5,13 +5,31 @@ class Categorie extends CI_Controller
 {
     public function form()
     {
-        
         $this->load->helper('url');
-        $this->load->view('backend/categorie/form');
+        $listeCategorie = $this->getAll();
+        $data = array(
+            "listeCategorie" => $listeCategorie
+        );
+
+        $this->load->view('backend/categorie/form', $data);
     }
 
-    public function insert($data)
+    public function insert()
     {
-        $this->db->insert('categories', $data);
+        $this->load->model('CategorieModel');
+        $data['nom'] = $_POST['nom'];
+        $this->CategorieModel->insert($data);
+    }
+
+    public function getAll()
+    {
+        $this->load->model('CategorieModel');
+        $resultat = $this->CategorieModel->getAll();
+        return $resultat;
+    }
+
+    public function delete()
+    {
+        $id = $this->uri->segment(3);
     }
 }
