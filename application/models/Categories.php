@@ -3,7 +3,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Categories extends CI_Model
 {
-    public  function getCategories()
+    public  function getCategoriescqscsqc()
     {
         $row = array();
         $query = $this->db->query('select * from Categories ');
