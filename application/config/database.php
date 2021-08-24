@@ -75,9 +75,15 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '81.19.215.12',
-	'username' => 'cscsmada',
-	'password' => '40%YTPIfyg@8c8',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => 'root',
+
+	// 'hostname' => '81.19.215.12',
+	// 'username' => 'cscsmada',
+	// 'password' => '40%YTPIfyg@8c8',
+
+
 	'database' => 'sihm',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

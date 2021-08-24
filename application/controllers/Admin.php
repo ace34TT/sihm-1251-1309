@@ -28,7 +28,13 @@ class Admin extends CI_Controller
     {
         $this->load->model('AdminModel');
         $nomUtilisateur = $_POST['nomUtilisateur'];
-        $motDepasse = $_POST['motDePasse'];
-        $this->AdminModel->login($nomUtilisateur, $motDepasse);
+        $motDepasse = $_POST['motDepasse'];
+        $result = $this->AdminModel->login($nomUtilisateur, $motDepasse);
+        if (count($result->result()) != 0) {
+            $this->load->library('session');
+            $_SESSION['user'] = $result->result()[0];
+        } else {
+            echo ("tsy misy");
+        }
     }
 }

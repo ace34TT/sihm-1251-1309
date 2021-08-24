@@ -5,6 +5,6 @@ class AdminModel extends CI_Model
     public function login($nomUtilisateur, $motDePasse)
     {
         $query = $this->db->get_where('admins', array('nomUtilisateur' => $nomUtilisateur, 'motDepasse' => sha1($motDePasse)));
-        echo '<pre>', var_dump($query), '</pre>';
+        return $query;
     }
 }
