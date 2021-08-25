@@ -51,4 +51,9 @@ class utilisateur extends CI_Controller
         $retour = explode(",", $ids);
         return array_pop($retour);
     }
+
+    public function test()
+    {
+        echo ("hello");
+    }
 }
