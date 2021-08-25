@@ -17,28 +17,11 @@
         <?php
         }
         ?>
-
     </select>
     <input type="file" name="picture">
     <input type="number" step="0.5" name="prixUnitaire">
     <input type="submit">
     <?php echo form_close(); ?>
-
-    <form action="<?= site_url('admin/produit/form') ?>" method="POST" enctype="multipart/form-data">
-        <input type="text" name="nom">
-        <select name="idCategorie" id="">
-            <?php
-            foreach ($listeCategorie as $categorie) { ?>
-                <option value=" <?= $categorie->id ?>"><?= $categorie->nom ?></option>
-            <?php
-            }
-            ?>
-
-        </select>
-        <input type="file" name="picture">
-        <input type="number" step="0.5" name="prixUnitaire">
-        <input type="submit">
-    </form>
 </div>
 
 <div>

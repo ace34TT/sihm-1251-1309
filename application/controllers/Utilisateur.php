@@ -20,7 +20,6 @@ class utilisateur extends CI_Controller
      */
     public function index()
     {
-        $this->load->helper('asset_helper');
         $this->load->helper('url');
         $this->load->view('frontend/index');
     }

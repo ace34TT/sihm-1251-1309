@@ -27,13 +27,18 @@ class Produit extends CI_Controller
         $data['nom'] = $_POST['nom'];
         $data['idCategorie'] = $_POST['idCategorie'];
         $data['prixUnitaire'] = $_POST['prixUnitaire'];
+
         // $this->ProduitModel->insert($data);
-        echo (asset_loader() . '/application/assets/products/');
+
+        echo (base_url() . 'assets/products/');
+
         $config = array(
-            'upload_path' => asset_loader() . '/products/',
+            'upload_path' => base_url() . 'assets/products/',
             'allowed_types' => "gif|jpg|png|jpeg|pdf",
             'overwrite' => TRUE,
-            'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+            'encrypt_name' => TRUE,
+            'file_name' => $data['nom'],
+            'max_size' => "2048000",
             'max_height' => "768",
             'max_width' => "1024"
         );

@@ -7,12 +7,11 @@
 
 <!-- CONTENT -->
 <?php ob_start(); ?>
-<?= asset_url() . '/images/upArrow.png' ?>
 
 <div class="container text-center">
-    <img src="<?= asset_url() ?>/images/upArrow.png" onclick="increase()" alt="not found">
-    <h5 id="numeroCaisse">5</h5>
-    <img src="<?= asset_url() ?>/images/downArrow.png" onclick="decrease()" alt="not found">
+    <img height="100px" width="100px" src="<?= base_url() ?>assets/images/upArrow.png" onclick="increase()" alt="not found">
+    <h1 style="font-size: 150px;" id="numeroCaisse">5</h1>
+    <img height="100px" width="100px" src="<?= base_url() ?>assets/images/downArrow.png" onclick="decrease()" alt="not found">
     <br>
     <button onclick="nextStep()">Suivant</button>
 </div>
