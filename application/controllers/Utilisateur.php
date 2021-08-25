@@ -40,6 +40,7 @@ class utilisateur extends CI_Controller
 
     public function listeProduit()
     {
+        $this->load->helper('url');
         $this->load->view('frontend/listeProduits');
     }
 
@@ -54,16 +55,66 @@ class utilisateur extends CI_Controller
         for ($i = 0; $i < count($ids) - 1; $i++) {
             $resultat[$i] = $this->ProduitModel->getById($ids[$i]);
         };
-
+        // echo '<pre>', var_dump($resultat), '</pre>';
         $data = array(
             'produitSelectionnee' => $resultat
         );
-        $this->load->view('frontend/achatProduit.php');
+        $this->load->view('frontend/achatProduit.php', $data);
     }
 
     private function spliteIds($ids)
     {
         $retour = explode(",", $ids);
         return $retour;
+    }
+
+    public function validerAchat()
+    {
+        $idsQnt = $_POST['id_qnt'];
+        $idQttArray = $this->spliteIdQtt($idsQnt);
+        $i = 0;
+        foreach ($idQttArray as $idQtt) {
+            $idQnt[$i] = explode('@', $idQtt);
+            $i++;
+        }
+
+        $this->load->model('FactureModel');
+        $this->load->model('AchatProduitModel');
+        $this->load->library('session');
+
+        $data = array(
+            'idCaisse' => $_SESSION['idCaisse'],
+            'dateFacture' => date("Y/m/d")
+        );
+
+        $factureId = $this->FactureModel->insert($data);
+
+        for ($i = 0; $i < count($idQnt) - 1; $i++) {
+            $data = array(
+                "idProduit" => $idQnt[$i][0],
+                "idFacture" => $factureId,
+                "quantite" =>  $idQnt[$i][1]
+            );
+            $this->AchatProduitModel->insert($data);
+        }
+
+        header('Location: ' . site_url("utilisateur/listeProduit"));
+    }
+    private function spliteIdQtt($idQtt)
+    {
+        $retour = explode('/', $idQtt);
+        return $retour;
+    }
+
+    public function produitParCategorie()
+    {
+        $this->load->helper('url');
+        $this->load->model('ProduitModel');
+        $this->load->model('CategorieModel');
+        $data = array(
+            'listeProduit' => $this->ProduitModel->getAll(),
+            'listeCategorie' => $this->CategorieModel->getAll()
+        );
+        $this->load->view('frontend/produitsParCategorie', $data);
     }
 }

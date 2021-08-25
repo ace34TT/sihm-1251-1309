@@ -55,7 +55,8 @@ $route['default_controller'] = 'utilisateur';
 $route['utilisateur/listeProduit']['get'] = 'utilisateur/listeProduit';
 $route['utilisateur/caisse/(:any)']['get'] = 'utilisateur/caisse/$1';
 $route['utilisateur/produitSelectionne']['post'] = 'utilisateur/produitSelectionne';
-
+$route['utilisateur/validerAchat']['post'] = 'utilisateur/validerAchat';
+$route['utilisateur/produitParCategorie']['get'] = 'utilisateur/produitParCategorie';
 
 //admin
 $route['admin/login']['get'] = 'admin/loginForm';
@@ -76,6 +77,18 @@ $route['admin/caisse/delete/(:any)']['get'] = 'caisse/delete/$1';
 $route['admin/produit/form']['get'] = 'produit/form';
 $route['admin/produit/form']['post'] = 'produit/insert';
 $route['admin/produit/delete/(:any)']['get'] = 'produit/delete/$1';
+
+
+//factures
+$route['admin/facture/form']['get'] = 'facture/form';
+$route['admin/facture/form']['post'] = 'facture/insert';
+$route['admin/facture/delete/(:any)']['get'] = 'facture/delete/$1';
+
+//achatProduits
+$route['admin/achatProduit/form']['get'] = 'achatProduit/form';
+$route['admin/achatProduit/form']['post'] = 'achatProduit/insert';
+$route['admin/achatProduit/delete/(:any)']['get'] = 'achatProduit/delete/$1';
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
