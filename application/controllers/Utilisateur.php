@@ -30,30 +30,40 @@ class utilisateur extends CI_Controller
         $this->load->library('session');
         $_SESSION['idCaisse'] = $caisse;
         //get caisse avec id $caisse
-        $this->load->view('frontend/selectionProduits');
+        $this->load->model('ProduitModel');
+        $listeProduit = $this->ProduitModel->getAll();
+        $data = array(
+            "listeProduit" => $listeProduit
+        );
+        $this->load->view('frontend/selectionProduits', $data);
     }
 
-    public function listProduit()
+    public function listeProduit()
     {
-        $this->load->view('listeProduits');
+        $this->load->view('frontend/listeProduits');
     }
 
-    public function produits()
+    public function produitSelectionne()
     {
         $this->load->library('session');
         $this->load->helper('url');
+        $this->load->model('ProduitModel');
         $idProduits = $_POST['productsId'];
-        $this->spliteIds($idProduits);
+        $ids = $this->spliteIds($idProduits);
+
+        for ($i = 0; $i < count($ids) - 1; $i++) {
+            $resultat[$i] = $this->ProduitModel->getById($ids[$i]);
+        };
+
+        $data = array(
+            'produitSelectionnee' => $resultat
+        );
+        $this->load->view('frontend/achatProduit.php');
     }
 
     private function spliteIds($ids)
     {
         $retour = explode(",", $ids);
-        return array_pop($retour);
-    }
-
-    public function test()
-    {
-        echo ("hello");
+        return $retour;
     }
 }

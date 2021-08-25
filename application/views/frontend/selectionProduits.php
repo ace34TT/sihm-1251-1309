@@ -20,25 +20,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>400</td>
-                <td> <input style="margin-left:25px;" type="checkbox" name="" id=""> </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>400</td>
-                <td> <input style="margin-left:25px;" type="checkbox" name="" id=""> </td>
-            </tr>
+            <?php
+            foreach ($listeProduit as $produit) {
+            ?>
+                <tr>
+                    <th scope="row"><?= $produit->id ?></th>
+                    <td><?= $produit->nom ?></td>
+                    <td><?= $produit->idCategorie ?></td>
+
+                    <td><?= $produit->prixUnitaire ?></td>
+                    <td> <input style="margin-left:25px;" type="checkbox" name="" id=""> </td>
+                </tr>
+            <?php
+            }
+            ?>
         </tbody>
     </table>
 </div>
 
-<form action="<?= site_url() ?>/utilisateur/produits" method="POST">
+<form action="<?= site_url() ?>/utilisateur/produitSelectionne" method="POST">
     <input type="text" name="productsId" value="" id="listIdProduit">
     <input type="submit" id="validate-btn" value="valider">
 </form>

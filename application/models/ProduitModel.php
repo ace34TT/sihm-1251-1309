@@ -12,6 +12,12 @@ class ProduitModel extends CI_Model
         $this->db->insert($this->tableName, $data);
     }
 
+    public function getById($id)
+    {
+        $query = $this->db->get($this->tableName, array('id' => $id));
+        return $query->result();
+    }
+
     public function getAll()
     {
         $query = $this->db->get($this->tableName);
