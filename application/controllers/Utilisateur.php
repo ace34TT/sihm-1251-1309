@@ -27,11 +27,24 @@ class utilisateur extends CI_Controller
 
     public function caisse($caisse)
     {
+        $this->load->helper('url');
         $this->load->library('session');
         $_SESSION['idCaisse'] = $caisse;
         //get caisse avec id $caisse
+        $this->load->view('frontend/selectionProduits');
+    }
 
-        
+    public function produits()
+    {
+        $this->load->library('session');
+        $this->load->helper('url');
+        $idProduits = $_POST['productsId'];
+        $this->spliteIds($idProduits);
+    }
 
+    private function spliteIds($ids)
+    {
+        $retour = explode(",", $ids);
+        return array_pop($retour);
     }
 }
