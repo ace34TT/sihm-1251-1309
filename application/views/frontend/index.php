@@ -1,4 +1,4 @@
-<?php $title = "Choix caisse"; ?>
+<?php $title = "Client-Choix caisse"; ?>
 
 <!-- HEADER -->
 <?php ob_start(); ?>
@@ -9,11 +9,19 @@
 <?php ob_start(); ?>
 
 <div class="container text-center">
-    <img height="100px" width="100px" src="<?= base_url() ?>assets/images/upArrow.png" onclick="increase()" alt="not found">
-    <h1 style="font-size: 150px;" id="numeroCaisse">5</h1>
-    <img height="100px" width="100px" src="<?= base_url() ?>assets/images/downArrow.png" onclick="decrease()" alt="not found">
-    <br>
-    <button onclick="nextStep()">Suivant</button>
+    <div class="row">
+        <!-- <div class="col-6">
+            <img height="250px" width="250px" src="<?= base_url() ?>assets/images/checkout.png" onclick="decrease()" alt="not found">
+        </div> -->
+        <div class="col-12">
+            <h1>Choississez un numero de caisse</h1>
+            <img height="100px" width="100px" src="<?= base_url() ?>assets/images/upArrow.png" onclick="increase()" alt="not found">
+            <h1 style="font-size: 150px;" id="numeroCaisse">1</h1>
+            <img height="100px" width="100px" src="<?= base_url() ?>assets/images/downArrow.png" onclick="decrease()" alt="not found">
+            <br>
+            <button onclick="nextStep()">Suivant</button>
+        </div>
+    </div>
 </div>
 
 <?php $content = ob_get_clean(); ?>
@@ -21,11 +29,16 @@
 <?php ob_start(); ?>
 <script>
     function increase() {
-        document.getElementById("numeroCaisse").innerHTML = parseInt(document.getElementById("numeroCaisse").textContent) + 1;
+        if ((parseInt(document.getElementById("numeroCaisse").textContent) + 1) <= 3) {
+            document.getElementById("numeroCaisse").innerHTML = parseInt(document.getElementById("numeroCaisse").textContent) + 1;
+        }
     }
 
     function decrease() {
-        document.getElementById("numeroCaisse").innerHTML = parseInt(document.getElementById("numeroCaisse").textContent) - 1;
+        if ((parseInt(document.getElementById("numeroCaisse").textContent) - 1) >= 1) {
+            document.getElementById("numeroCaisse").innerHTML = parseInt(document.getElementById("numeroCaisse").textContent) - 1;
+        }
+
     }
 
     function nextStep() {
