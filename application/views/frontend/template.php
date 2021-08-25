@@ -28,10 +28,8 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="#">Choix caisse</a>
-                        <a class="nav-link" href="#">List produit</a>
+                        <a class="nav-link" href="<?= site_url() ?>/utilisateur/listeProduit">List produit</a>
                         <a class="nav-link" href="<?= site_url() ?>/utilisateur/produitParCategorie">Produit par categorie</a>
-                        <a class="nav-link" href="#">Effectuer achat</a>
-                        <a class="nav-link" href="#">User guide</a>
                         <a class="nav-link" href="<?= site_url() ?>/admin/loginForm">Login</a>
                     </div>
                 </div>

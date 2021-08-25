@@ -38,12 +38,18 @@
     </tbody>
 </table>
 
-<span>Total :</span> <span id="total" on></span>
+<div class="row text-center">
+    <span>Total :</span> <span id="total" on></span>
+</div>
 
-<form action="<?= site_url() ?>/utilisateur/validerAchat" method="POST">
-    <input type="text" value="" name="id_qnt" id="id_qnt">
-    <input type="submit" value="valider" onmouseover="idQuantite()">
-</form>
+<div class="row text-center">
+    <form action="<?= site_url() ?>/utilisateur/validerAchat" method="POST">
+        <input type="text" value="" name="id_qnt" id="id_qnt">
+        <input type="submit" value="valider" onmouseover="idQuantite()">
+    </form>
+
+</div>
+
 
 <?php $content = ob_get_clean(); ?>
 <!-- SCRIPT -->
