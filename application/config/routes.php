@@ -60,7 +60,7 @@ $route['admin/dashboard']['get'] = 'admin/dashboard';
 //categorie
 $route['admin/categorie/form']['get'] = 'categorie/form';
 $route['admin/categorie/form']['post'] = 'categorie/insert';
-
+$route['admin/categorie/delete/(:any)']['get'] = 'categorie/delete/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

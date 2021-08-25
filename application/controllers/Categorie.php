@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Categorie extends CI_Controller
 {
+
     public function form()
     {
         $this->load->helper('url');
@@ -16,9 +17,11 @@ class Categorie extends CI_Controller
 
     public function insert()
     {
+        $this->load->helper('url');
         $this->load->model('CategorieModel');
         $data['nom'] = $_POST['nom'];
         $this->CategorieModel->insert($data);
+        header('Location: ' . site_url("admin/categorie/form"));
     }
 
     public function getAll()
@@ -28,8 +31,11 @@ class Categorie extends CI_Controller
         return $resultat;
     }
 
-    public function delete()
+    public function delete($id)
     {
-        $id = $this->uri->segment(3);
+        $this->load->helper('url');
+        $this->load->model('CategorieModel');
+        $this->CategorieModel->delete($id);
+        header('Location: ' . site_url("admin/categorie/form"));
     }
 }

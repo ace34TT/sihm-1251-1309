@@ -21,6 +21,7 @@ class CategorieModel extends CI_Model
 
     public function delete($id)
     {
-        $this->db->delete('mytable', array('id' => $id));
+        echo ($id);
+        $this->db->delete($this->tableName, array('id' => $id));
     }
 }

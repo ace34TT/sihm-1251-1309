@@ -30,7 +30,7 @@
                 <tr>
                     <th scope="row"><?= $categorie->id ?></th>
                     <td><?= $categorie->nom ?></td>
-                    <td><a href="">delete</a></td>
+                    <td><a href=" <?= site_url('admin/categorie/delete/' . $categorie->id) ?>">delete</a></td>
                 </tr>
             <?php
             }
