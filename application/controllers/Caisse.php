@@ -32,7 +32,7 @@ class Caisse extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->model('CaisseModel');
-        $this->CategorieModel->delete($id);
+        $this->CaisseModel->delete($id);
         header('Location: ' . site_url("admin/caisse/form"));
     }
 }

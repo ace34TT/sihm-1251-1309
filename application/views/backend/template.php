@@ -13,6 +13,7 @@
 <body>
     <a href="<?= site_url("admin/categorie/form") ?>">Categorie</a>
     <a href="<?= site_url("admin/caisse/form") ?>">Caisse</a>
+    <a href="<?= site_url("admin/produit/form") ?>">Produits</a>
     <?= $content ?>
 </body>
 

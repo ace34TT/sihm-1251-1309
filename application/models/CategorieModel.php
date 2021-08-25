@@ -3,7 +3,6 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class CategorieModel extends CI_Model
 {
-
     private $tableName = 'categories';
 
     public function insert($data)
@@ -20,7 +19,6 @@ class CategorieModel extends CI_Model
 
     public function delete($id)
     {
-        echo ($id);
         $this->db->delete($this->tableName, array('id' => $id));
     }
 }

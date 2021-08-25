@@ -70,5 +70,10 @@ $route['admin/caisse/form']['get'] = 'caisse/form';
 $route['admin/caisse/form']['post'] = 'caisse/insert';
 $route['admin/caisse/delete/(:any)']['get'] = 'caisse/delete/$1';
 
+//produit
+$route['admin/produit/form']['get'] = 'produit/form';
+$route['admin/produit/form']['post'] = 'produit/insert';
+$route['admin/produit/delete/(:any)']['get'] = 'produit/delete/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
