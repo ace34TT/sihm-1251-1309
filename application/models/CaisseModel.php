@@ -1,15 +1,14 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class CategorieModel extends CI_Model
+class CaisseModel extends CI_Model
 {
+    private $tableName = 'caisses';
 
-    private $tableName = 'categories';
-
-    public function insert($data)
+    public function insert()
     {
         $this->load->helper('url');
-        $this->db->insert($this->tableName, $data);
+        $this->db->insert($this->tableName, array('id' => null));
     }
 
     public function getAll()

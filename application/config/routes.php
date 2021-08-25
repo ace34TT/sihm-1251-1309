@@ -65,5 +65,10 @@ $route['admin/categorie/form']['get'] = 'categorie/form';
 $route['admin/categorie/form']['post'] = 'categorie/insert';
 $route['admin/categorie/delete/(:any)']['get'] = 'categorie/delete/$1';
 
+//caisse
+$route['admin/caisse/form']['get'] = 'caisse/form';
+$route['admin/caisse/form']['post'] = 'caisse/insert';
+$route['admin/caisse/delete/(:any)']['get'] = 'caisse/delete/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
