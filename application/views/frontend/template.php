@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <?= $links ?>
+
+    <!-- <style>
+        body {
+            background-color: rgb(42, 150, 221);
+        }
+    </style> -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/utilisateur.css">
     <title><?= $title ?></title>
 </head>
 
@@ -25,13 +32,12 @@
                         <a class="nav-link" href="<?= site_url() ?>/utilisateur/produitParCategorie">Produit par categorie</a>
                         <a class="nav-link" href="#">Effectuer achat</a>
                         <a class="nav-link" href="#">User guide</a>
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link" href="<?= site_url() ?>/admin/loginForm">Login</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-    <span><a href="">Recherche par categorie</a></span>
     <br>
     <?= $content ?>
 

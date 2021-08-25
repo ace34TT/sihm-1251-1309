@@ -14,12 +14,12 @@
             <img height="250px" width="250px" src="<?= base_url() ?>assets/images/checkout.png" onclick="decrease()" alt="not found">
         </div> -->
         <div class="col-12">
-            <h1>Choississez un numero de caisse</h1>
+            <h1 style="color:white">Choississez un numero de caisse</h1>
             <img height="100px" width="100px" src="<?= base_url() ?>assets/images/upArrow.png" onclick="increase()" alt="not found">
-            <h1 style="font-size: 150px;" id="numeroCaisse">1</h1>
+            <h1 style="font-size: 150px;color: white;" id="numeroCaisse">1</h1>
             <img height="100px" width="100px" src="<?= base_url() ?>assets/images/downArrow.png" onclick="decrease()" alt="not found">
             <br>
-            <button onclick="nextStep()">Suivant</button>
+            <button class="btn btn-outline-light" onclick="nextStep()">Suivant</button>
         </div>
     </div>
 </div>
@@ -38,7 +38,6 @@
         if ((parseInt(document.getElementById("numeroCaisse").textContent) - 1) >= 1) {
             document.getElementById("numeroCaisse").innerHTML = parseInt(document.getElementById("numeroCaisse").textContent) - 1;
         }
-
     }
 
     function nextStep() {
