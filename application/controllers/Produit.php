@@ -52,7 +52,6 @@ class Produit extends CI_Controller
             $error = array('error' => $this->upload->display_errors('picture'));
             echo '<pre>', var_dump($error), '</pre>';
         }
-
         // header('Location: ' . site_url("admin/produit/form"));
     }
 

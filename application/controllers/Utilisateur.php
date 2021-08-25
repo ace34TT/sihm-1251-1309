@@ -33,6 +33,11 @@ class utilisateur extends CI_Controller
         $this->load->view('frontend/selectionProduits');
     }
 
+    public function listProduit()
+    {
+        $this->load->view('listeProduits');
+    }
+
     public function produits()
     {
         $this->load->library('session');

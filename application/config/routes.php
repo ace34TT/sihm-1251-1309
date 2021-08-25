@@ -51,9 +51,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 
 //utilisateur
+$route['utilisateur/listProduit']['get'] = 'utilisateur/listeProduit';
 $route['default_controller'] = 'utilisateur';
 $route['utilisateur/caisse/(:any)']['get'] = 'utilisateur/caisse/$1';
 $route['utilisateur/produits']['post'] = 'utilisateur/produits';
+
 
 //admin
 $route['admin/login']['get'] = 'admin/loginForm';
